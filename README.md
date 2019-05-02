@@ -83,3 +83,4 @@ in `LX/target`:
 1. source jar for distribution via maven repository publishing
 1. javadoc jar for distribution via maven repository publishing
 1. javadoc html files for publishing to web: `apidocs`
+# lightbars
