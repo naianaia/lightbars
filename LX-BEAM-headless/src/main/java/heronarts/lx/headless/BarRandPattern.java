@@ -49,10 +49,10 @@ public class BarRandPattern extends LXPattern {
   }
 
   public void run(double deltaMs) {
-    List<Fixture> beams = ((GridModel3D)this.model).beams;
+    List<Beam> beams = ((GridModel3D)this.model).beams;
     
     if (animationModulator.loop()) {  
-      for (Fixture beam : beams) {    
+      for (Beam beam : beams) {    
         double barShow = 100*rand.nextDouble();
         System.out.println(rate.getValue());
         if (barShow < rate.getValue()) {

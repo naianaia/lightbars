@@ -67,8 +67,8 @@ public class RainPattern extends LXPattern {
   }
   
   public void addDroplet() {
-      List<Fixture> beams = ((GridModel3D)this.model).beams;
-      Fixture beam = beams.get(rand.nextInt(beams.size()));
+      List<Beam> beams = ((GridModel3D)this.model).beams;
+      Beam beam = beams.get(rand.nextInt(beams.size()));
       
       List<List<LXPoint>> strips = new ArrayList<List<LXPoint>>();
       

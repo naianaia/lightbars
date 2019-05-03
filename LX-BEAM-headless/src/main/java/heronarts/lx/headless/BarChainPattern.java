@@ -66,14 +66,14 @@ public class BarChainPattern extends LXPattern {
   }
 
   public void run(double deltaMs) {
-    List<Fixture> beams = ((GridModel3D)this.model).beams;
+    List<Beam> beams = ((GridModel3D)this.model).beams;
     int beamIndex = 0;
     
     if (animationModulator.loop()) {  
       barInt++;
       if (barInt >= ((GridModel3D)this.model).NUM_BEAMS) {
         chain = false;
-        for (Fixture beam : beams) {
+        for (Beam beam : beams) {
           for (List<LXPoint> strip : beam.sides) {
             for (int i = 0; i < strip.size(); i++) {
               colors[strip.get(i).index] = LXColor.gray(0);
@@ -83,7 +83,7 @@ public class BarChainPattern extends LXPattern {
       }
     } else {
       if (chain == true) {
-        for (Fixture beam : beams) {    
+        for (Beam beam : beams) {    
           if (beamIndex++ == barInt) {
             for (List<LXPoint> strip : beam.sides) {
               for (int i = 0; i < strip.size(); i++) {

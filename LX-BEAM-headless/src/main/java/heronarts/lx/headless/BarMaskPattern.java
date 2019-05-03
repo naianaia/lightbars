@@ -47,10 +47,10 @@ public class BarMaskPattern extends LXPattern {
   }
   
   public void run(double deltaMs) {
-    List<Fixture> beams = ((GridModel3D)this.model).beams;
+    List<Beam> beams = ((GridModel3D)this.model).beams;
     int beamIndex = 0;
     
-    for (Fixture beam : beams) {
+    for (Beam beam : beams) {
       for (List<LXPoint> strip : beam.sides) {
         for (int i = 0; i < strip.size(); i++) {
           colors[strip.get(i).index] = LXColor.gray(triggers.get(beamIndex).isOn() ? 100 : 0);

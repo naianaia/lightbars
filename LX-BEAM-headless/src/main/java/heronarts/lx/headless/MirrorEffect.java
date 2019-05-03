@@ -20,9 +20,9 @@ public class MirrorEffect extends LXEffect {
   }
   
   public void run(double deltaMs, double amount) {
-    List<Fixture> beams = ((GridModel3D)this.model).beams;
+    List<Beam> beams = ((GridModel3D)this.model).beams;
 
-    for (Fixture beam : beams) {
+    for (Beam beam : beams) {
       for (List<LXPoint> strip : beam.sides) {
         int midpoint = strip.size() / 2;
         

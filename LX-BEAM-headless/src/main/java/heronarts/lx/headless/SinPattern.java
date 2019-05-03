@@ -35,9 +35,9 @@ public class SinPattern extends LXPattern {
   }
   
   public void run(double deltaMs) {
-    List<Fixture> beams = ((GridModel3D)this.model).beams;
+    List<Beam> beams = ((GridModel3D)this.model).beams;
 
-    for (Fixture beam : beams) {
+    for (Beam beam : beams) {
       for (List<LXPoint> strip : beam.sides) {
         for (int i = 0; i < strip.size(); i++) {
           float a = ((float)i / strip.size() * TWO_PI / period.getValuef() + position.getValuef() * TWO_PI) % TWO_PI;

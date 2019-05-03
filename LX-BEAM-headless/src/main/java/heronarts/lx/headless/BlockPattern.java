@@ -61,10 +61,10 @@ public class BlockPattern extends LXPattern {
   }
 
   public void run(double deltaMs) {
-    List<Fixture> beams = ((GridModel3D)this.model).beams;
+    List<Beam> beams = ((GridModel3D)this.model).beams;
     int beamIndex = 0;
     
-    for (Fixture beam : beams) {    
+    for (Beam beam : beams) {    
       for (List<LXPoint> strip : beam.sides) {
         int fragSize = (int)(strip.size() / fragments.getValue());
         boolean white = seeds[beamIndex++];

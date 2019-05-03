@@ -44,15 +44,10 @@ import java.util.ArrayList;
  */
 public class LXHeadless {
 
+
+
   public LXModel buildModel() {
-    final List<Fixture> beams = new ArrayList<Fixture>();
-    
-    for (int i = 0; i < 5; i++) {//GridModel3D.NUM_BEAMS
-      beams.add(new Fixture(i * 0.2f, 0));
-    }
-    
-    // A three-dimensional grid model
-    return new GridModel3D(beams);
+    return new GridModel3D(5);
   }
 
   public int[] getIndices(List<LXPoint> points) {
@@ -66,8 +61,8 @@ public class LXHeadless {
 
   public void main(String[] args) {
     try {
-      LXModel model = buildModel();
-      LX lx = new LX(model);
+      GridModel3D gridModel3D = (GridModel3D)buildModel();
+      LX lx = new LX(gridModel3D);
       //lx = new heronarts.lx.studio.LXStudio(this, buildModel(), MULTITHREADED);
 
       final double MAX_BRIGHTNESS = 0.7;
@@ -85,7 +80,7 @@ public class LXHeadless {
 
       for (int i = 0; i < ARTNET_IPS.length; i++) {
         //// Get our beam
-        Fixture beam = ((GridModel3D)model).beams.get(i);
+        Beam beam = gridModel3D.beams.get(i);
         
         // Add an ArtNetDatagram which sends all of the points in our model
         //use new ArtNetDatagram(lx.getModel(), 512, 0).setAddress("localhost")
